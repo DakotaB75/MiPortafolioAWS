@@ -107,3 +107,28 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.aws-badge-img')
     .forEach(img => img.addEventListener('mouseenter', () => { hoverSound.currentTime = 0; hoverSound.play(); }));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const form = document.getElementById("contactForm");
+  const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); 
+
+    if (!form.checkValidity()) {
+      form.classList.add("was-validated");
+      return;
+    }
+
+    successModal.show();
+
+    setTimeout(() => {
+      form.submit();
+    }, 800); 
+
+    form.reset();
+    form.classList.remove("was-validated");
+  });
+
+});
