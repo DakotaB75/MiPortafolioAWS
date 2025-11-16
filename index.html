@@ -1817,28 +1817,6 @@ nameInput.addEventListener('mouseleave', () => nameInput.placeholder = defaults.
 
 messageInput.addEventListener('mouseenter', () => messageInput.placeholder = placeholders.message);
 messageInput.addEventListener('mouseleave', () => messageInput.placeholder = defaults.message);
-
-
-
-const form = document.getElementById('contactForm');
-const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-
-form.addEventListener('submit', function(event) {
-  event.preventDefault(); 
-
-  const formData = new FormData(form);
-
-  fetch(form.action, {
-    method: form.method,
-    body: formData
-  })
-  .finally(() => {
-    // Siempre mostrar el modal
-    successModal.show();
-    form.reset();
-  });
-});
-
 </script>
 <script src="navbar.js"></script>
 <script src="main.js" defer></script>

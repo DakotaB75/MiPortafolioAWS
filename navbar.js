@@ -1,9 +1,10 @@
-  document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form[action="https://formspree.io/f/xblqrlgw"]');
-  const toastEl = document.getElementById('liveToast');
-  const toast = new bootstrap.Toast(toastEl); 
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm');
+  const successModal = new bootstrap.Modal(document.getElementById('successModal'));
 
-  form.addEventListener('submit', async (e) => {
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
     e.preventDefault(); 
 
     if (!form.checkValidity()) {
@@ -11,28 +12,14 @@
       return;
     }
 
-    const formData = new FormData(form);
+    successModal.show();
 
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+    setTimeout(() => {
+      form.submit(); 
+    }, 400);
 
-      if (response.ok) {
-        toast.show();     
-        form.reset();      
-        form.classList.remove('was-validated'); 
-      } else {
-        alert("Hubo un error al enviar el formulario. Por favor intenta de nuevo.");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Hubo un error de conexión. Por favor intenta más tarde.");
-    }
+    form.reset();
+    form.classList.remove('was-validated');
   });
 });
 
@@ -41,8 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggler = document.querySelector('.navbar-toggler-aws');
   const navLinks = document.querySelector('.nav-links');
 
-
-  if (!toggler || !navLinks) return; 
+  if (!toggler || !navLinks) return;
 
   document.querySelectorAll('.nav-links a, .navbar-brand-aws').forEach(link => {
     link.addEventListener('click', e => {
@@ -69,21 +55,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-
   const musicBtn = document.getElementById("music-btn");
   const musicIcon = document.getElementById("music-icon");
   const musicAudio = document.getElementById("music-audio");
 
+  if (!musicBtn) return;
+
   let isPlaying = false;
 
   musicBtn.addEventListener("click", () => {
-
     if (!isPlaying) {
       musicAudio.play();
       musicIcon.className = "bi bi-soundwave";
       musicBtn.classList.add("music-playing");
       isPlaying = true;
-
     } else {
       musicAudio.pause();
       musicIcon.className = "bi bi-pause-circle";
@@ -94,74 +79,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   musicAudio.addEventListener("ended", () => {
     isPlaying = false;
-    musicIcon.className = "bi bi-music-note-beamed"; 
+    musicIcon.className = "bi bi-music-note-beamed";
     musicBtn.classList.remove("music-playing");
   });
-
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  const clickSound = document.createElement("audio");
-  clickSound.src = "Audios/buttonclick.mp3";
-  clickSound.preload = "auto";
-
+  const clickSound = new Audio("Audios/buttonclick.mp3");
   const navbarButtons = document.querySelectorAll('.nav-links a, .navbar-brand-aws, .navbar-toggler-aws');
-
-  navbarButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      clickSound.currentTime = 0; 
-      clickSound.play();           
-    });
-  });
-
+  navbarButtons.forEach(btn => btn.addEventListener('click', () => { clickSound.currentTime = 0; clickSound.play(); }));
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  const arrowSound = document.createElement("audio");
-  arrowSound.src = "Audios/Classic.mp3";
-  arrowSound.preload = "auto";
-
-  const carouselButtons = document.querySelectorAll('.carousel-control-prev, .carousel-control-next');
-
-  carouselButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      arrowSound.currentTime = 0; 
-      arrowSound.play();          
-    });
-  });
-
+  const arrowSound = new Audio("Audios/Classic.mp3");
+  document.querySelectorAll('.carousel-control-prev, .carousel-control-next')
+    .forEach(btn => btn.addEventListener('click', () => { arrowSound.currentTime = 0; arrowSound.play(); }));
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  const sendSound = document.createElement("audio");
-  sendSound.src = "Audios/Xbox 360 Menu.mp3";
-  sendSound.preload = "auto";
-
+  const sendSound = new Audio("Audios/Xbox 360 Menu.mp3");
   const sendBtn = document.querySelector('.send-btn');
-
-  if (sendBtn) {
-    sendBtn.addEventListener('click', () => {
-      sendSound.currentTime = 0; 
-      sendSound.play();           
-    });
-  }
+  if (sendBtn) sendBtn.addEventListener('click', () => { sendSound.currentTime = 0; sendSound.play(); });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  const hoverSound = document.createElement("audio");
-  hoverSound.src = "Audios/Keycap.mp3";
-  hoverSound.preload = "auto";
-
-  const badgeImages = document.querySelectorAll('.aws-badge-img');
-
-  badgeImages.forEach(img => {
-    img.addEventListener('mouseenter', () => {
-      hoverSound.currentTime = 0; 
-      hoverSound.play();           
-    });
-  });
+  const hoverSound = new Audio("Audios/Keycap.mp3");
+  document.querySelectorAll('.aws-badge-img')
+    .forEach(img => img.addEventListener('mouseenter', () => { hoverSound.currentTime = 0; hoverSound.play(); }));
 });
