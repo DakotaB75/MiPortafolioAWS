@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   const successModal = new bootstrap.Modal(document.getElementById("successModal"));
 
-  form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", async function (e) {
     e.preventDefault(); 
 
     if (!form.checkValidity()) {
@@ -121,14 +121,26 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    successModal.show();
+    const formData = new FormData(form);
 
-    setTimeout(() => {
-      form.submit();
-    }, 800); 
+    try {
+      const response = await fetch("https://formspree.io/f/xblqrlgw", {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
 
-    form.reset();
-    form.classList.remove("was-validated");
+      if (response.ok) {
+        successModal.show();    
+        form.reset();           
+        form.classList.remove("was-validated");
+      } else {
+        alert("Something went wrong. Try again later.");
+      }
+
+    } catch (error) {
+      alert("Network error. Please try again.");
+    }
   });
 
 });
