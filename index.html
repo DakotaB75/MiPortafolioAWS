@@ -881,6 +881,127 @@ blockquote {
     height: auto;
   }
 }
+@media (max-width: 768px) {
+
+  .ittools-grid {
+    display: none; 
+  }
+
+  .ittools-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding: 15px 25px;
+  }
+
+  .ittools-mobile-item {
+    background: rgba(138, 43, 226, 0.20);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    border-radius: 14px;
+    padding: 10px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ittools-mobile-item img {
+    width: 55px;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+
+  .content-grid {
+    display: none; 
+  }
+
+  .content-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 15px 30px;
+  }
+
+  .content-mobile-item {
+    background: rgba(138, 43, 226, 0.20);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    border-radius: 16px;
+    padding: 12px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-mobile-item img {
+    width: 60px;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+
+  .ai-grid {
+    display: none; 
+  }
+
+  .ai-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 15px 25px;
+  }
+
+  .ai-mobile-item {
+    background: rgba(138, 43, 226, 0.20);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    border-radius: 16px;
+    padding: 12px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ai-mobile-item img {
+    width: 60px;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+
+  .googleux-grid {
+    display: none; 
+  }
+
+  .googleux-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 15px 25px;
+  }
+
+  .googleux-mobile-item {
+    background: rgba(138, 43, 226, 0.20);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    border-radius: 16px;
+    padding: 12px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .googleux-mobile-item img {
+    width: 58px;
+    height: auto;
+  }
+}
+
 
 </style>
 <body>
@@ -1321,59 +1442,42 @@ blockquote {
       <p class="programming-tag close">&lt;/Programming&gt;</p>
   </div>
 
-
 <div class="section-block">
   <p class="programming-tag open">&lt;itTools&gt;</p>
 
-  <div class="row justify-content-center honeycomb-grid mb-4">
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/19.png" alt="XAMPP" class="img-fluid">
-    </div>
+  <div class="row justify-content-center honeycomb-grid mb-4 ittools-grid">
+    <div class="col-4 col-md-2 hexagon"><img src="Habilidades/19.png" alt="XAMPP" class="img-fluid"></div>
+    <div class="col-4 col-md-2 hexagon"><img src="Habilidades/20.png" alt="WAMPP Server" class="img-fluid"></div>
+    <div class="col-4 col-md-2 hexagon"><img src="Habilidades/21.png" alt="NetBeans" class="img-fluid"></div>
+    <div class="col-4 col-md-2 hexagon"><img src="Habilidades/22.png" alt="Visual Studio" class="img-fluid"></div>
+    <div class="col-4 col-md-2 hexagon"><img src="Habilidades/23.png" alt="phpMyAdmin" class="img-fluid"></div>
+    <div class="col-4 col-md-2 hexagon"><img src="Habilidades/24.png" alt="Notion" class="img-fluid"></div>
+    <div class="col-4 col-md-2 hexagon"><img src="Habilidades/29.png" alt="Google Classroom" class="img-fluid"></div>
+    <div class="col-4 col-md-2 hexagon"><img src="Habilidades/25.png" alt="Zoom" class="img-fluid"></div>
+    <div class="col-4 col-md-2 hexagon"><img src="Habilidades/26.png" alt="Discord" class="img-fluid"></div>
+    <div class="col-4 col-md-2 hexagon"><img src="Habilidades/27.png" alt="Moodle" class="img-fluid"></div>
+  </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/20.png" alt="WAMPP Server" class="img-fluid">
-    </div>
+  <div class="ittools-mobile-grid d-md-none">
+    <div class="ittools-mobile-item"><img src="Habilidades/19.png" alt="XAMPP"></div>
+    <div class="ittools-mobile-item"><img src="Habilidades/20.png" alt="WAMPP Server"></div>
+    <div class="ittools-mobile-item"><img src="Habilidades/21.png" alt="NetBeans"></div>
+    <div class="ittools-mobile-item"><img src="Habilidades/22.png" alt="Visual Studio"></div>
+    <div class="ittools-mobile-item"><img src="Habilidades/23.png" alt="phpMyAdmin"></div>
+    <div class="ittools-mobile-item"><img src="Habilidades/24.png" alt="Notion"></div>
+    <div class="ittools-mobile-item"><img src="Habilidades/29.png" alt="Google Classroom"></div>
+    <div class="ittools-mobile-item"><img src="Habilidades/25.png" alt="Zoom"></div>
+    <div class="ittools-mobile-item"><img src="Habilidades/26.png" alt="Discord"></div>
+    <div class="ittools-mobile-item"><img src="Habilidades/27.png" alt="Moodle"></div>
+  </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/21.png" alt="NetBeans" class="img-fluid">
-    </div>
-
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/22.png" alt="Visual Studio" class="img-fluid">
-    </div>
-
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/23.png" alt="phpMyAdmin" class="img-fluid">
-    </div>
-
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/24.png" alt="Notion" class="img-fluid">
-    </div>
-
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/29.png" alt="Google Classroom" class="img-fluid">
-    </div>
-
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/25.png" alt="Zoom" class="img-fluid">
-    </div>
-
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/26.png" alt="Discord" class="img-fluid">
-    </div>
-
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/27.png" alt="Moodle" class="img-fluid">
-    </div>
-
-</div>
-<p class="programming-tag close">&lt;/itTools&gt;</p>
+  <p class="programming-tag close">&lt;/itTools&gt;</p>
 </div>
 
 <div class="section-block">
   <p class="programming-tag open">&lt;ContentProduction&gt;</p>
 
-  <div class="row justify-content-center honeycomb-grid mb-4">
+  <div class="row justify-content-center honeycomb-grid mb-4 content-grid">
     <div class="col-4 col-md-2 hexagon">
       <img src="Habilidades/28.png" alt="Canva">
     </div>
@@ -1385,47 +1489,64 @@ blockquote {
     <div class="col-4 col-md-2 hexagon">
       <img src="Habilidades/32.png" alt="Figma">
     </div>
-
   </div>
+
+  <div class="content-mobile-grid d-md-none">
+    <div class="content-mobile-item"><img src="Habilidades/28.png" alt="Canva"></div>
+    <div class="content-mobile-item"><img src="Habilidades/31.png" alt="Blender"></div>
+    <div class="content-mobile-item"><img src="Habilidades/32.png" alt="Figma"></div>
+  </div>
+
   <p class="programming-tag close">&lt;/ContentProduction&gt;</p>
 </div>
 
 <div class="section-block">
   <p class="programming-tag open">&lt;AI-Tools&gt;</p>
 
-<div class="row justify-content-center honeycomb-grid mb-4">
+  <div class="row justify-content-center honeycomb-grid mb-4 ai-grid">
+    
+    <div class="col-4 col-md-2 hexagon">
+      <img src="Habilidades/33.png" alt="Claude AI" class="img-fluid">
+    </div>
 
-  <div class="col-4 col-md-2 hexagon">
-    <img src="Habilidades/33.png" alt="Claude AI" class="img-fluid">
+    <div class="col-4 col-md-2 hexagon">
+      <img src="Habilidades/38.png" alt="ChatGPT" class="img-fluid">
+    </div>
+
+    <div class="col-4 col-md-2 hexagon">
+      <img src="Habilidades/34.png" alt="GitHub Copilot" class="img-fluid">
+    </div>
+
+    <div class="col-4 col-md-2 hexagon">
+      <img src="Habilidades/39.png" alt="Meta AI (Llama)" class="img-fluid">
+    </div>
+
+    <div class="col-4 col-md-2 hexagon">
+      <img src="Habilidades/37.png" alt="Notion AI" class="img-fluid">
+    </div>
+
+    <div class="col-4 col-md-2 hexagon">
+      <img src="Habilidades/36.png" alt="GrammarlyGO" class="img-fluid">
+    </div>
+
   </div>
 
-  <div class="col-4 col-md-2 hexagon">
-    <img src="Habilidades/38.png" alt="ChatGPT" class="img-fluid">
+  <div class="ai-mobile-grid d-md-none">
+    <div class="ai-mobile-item"><img src="Habilidades/33.png" alt="Claude AI"></div>
+    <div class="ai-mobile-item"><img src="Habilidades/38.png" alt="ChatGPT"></div>
+    <div class="ai-mobile-item"><img src="Habilidades/34.png" alt="GitHub Copilot"></div>
+    <div class="ai-mobile-item"><img src="Habilidades/39.png" alt="Meta AI"></div>
+    <div class="ai-mobile-item"><img src="Habilidades/37.png" alt="Notion AI"></div>
+    <div class="ai-mobile-item"><img src="Habilidades/36.png" alt="GrammarlyGO"></div>
   </div>
 
-  <div class="col-4 col-md-2 hexagon">
-    <img src="Habilidades/34.png" alt="GitHub Copilot" class="img-fluid">
-  </div>
-
-  <div class="col-4 col-md-2 hexagon">
-    <img src="Habilidades/39.png" alt="Meta AI (Llama)" class="img-fluid">
-  </div>
-
-  <div class="col-4 col-md-2 hexagon">
-    <img src="Habilidades/37.png" alt="Notion AI" class="img-fluid">
-  </div>
-
-  <div class="col-4 col-md-2 hexagon">
-    <img src="Habilidades/36.png" alt="GrammarlyGO" class="img-fluid">
-  </div>
-
-</div>
-<p class="programming-tag close">&lt;/AI-Tools&gt;</p>
+  <p class="programming-tag close">&lt;/AI-Tools&gt;</p>
 </div>
 
 <div class="section-block">
   <p class="programming-tag open">&lt;Google UX Research &amp; Performance Tools&gt;</p>
-  <div class="row justify-content-center honeycomb-grid mb-4">
+
+  <div class="row justify-content-center honeycomb-grid mb-4 googleux-grid">
 
     <div class="col-4 col-md-2 hexagon">
       <img src="Habilidades/400.png" alt="Google Analytics" class="img-fluid">
@@ -1459,10 +1580,24 @@ blockquote {
       <img src="Habilidades/47.png" alt="Google Meet" class="img-fluid">
     </div>
 
+  </div>
+
+  <div class="googleux-mobile-grid d-md-none">
+
+    <div class="googleux-mobile-item"><img src="Habilidades/400.png" alt="Google Analytics"></div>
+    <div class="googleux-mobile-item"><img src="Habilidades/41.png" alt="Google ADS"></div>
+    <div class="googleux-mobile-item"><img src="Habilidades/42.png" alt="Google Lighthouse"></div>
+    <div class="googleux-mobile-item"><img src="Habilidades/43.png" alt="Google PageSpeed Insights"></div>
+    <div class="googleux-mobile-item"><img src="Habilidades/44.png" alt="Google Data Studio"></div>
+    <div class="googleux-mobile-item"><img src="Habilidades/45.png" alt="Google Trends"></div>
+    <div class="googleux-mobile-item"><img src="Habilidades/46.png" alt="Google Search"></div>
+    <div class="googleux-mobile-item"><img src="Habilidades/47.png" alt="Google Meet"></div>
+
+  </div>
+
+  <p class="programming-tag close">&lt;/Google UX Research &amp; Performance Tools&gt;</p>
 </div>
-<p class="programming-tag close">&lt;/Google UX Research &amp; Performance Tools&gt;</p>
-</div>
-</section>
+
 
 <div style="height:90px; background-color:#010810;" id="projectsB"></div>
 
