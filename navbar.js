@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactForm');
   const successModal = new bootstrap.Modal(document.getElementById('successModal'));
 
   if (!form) return;
@@ -108,42 +107,5 @@ document.addEventListener("DOMContentLoaded", () => {
     .forEach(img => img.addEventListener('mouseenter', () => { hoverSound.currentTime = 0; hoverSound.play(); }));
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-
-  const form = document.getElementById("contactForm");
-  const successModal = new bootstrap.Modal(document.getElementById("successModal"));
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    if (!form.checkValidity()) {
-      form.classList.add("was-validated");
-      return;
-    }
-
-    const data = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: { "Accept": "application/json" }
-      });
-
-      if (response.ok) {
-        successModal.show();
-        form.reset();
-        form.classList.remove("was-validated");
-      } else {
-        const errorData = await response.json();
-        console.error("Formspree Error:", errorData);
-        alert("Oops! Something went wrong while sending your message.");
-      }
-
-    } catch (error) {
-      console.error("Network Error:", error);
-      alert("Network error. Please try again.");
-    }
-  });
-
+document.addEventListener("DOMContentLoaded", () => {  
 });
