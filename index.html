@@ -791,7 +791,6 @@ blockquote {
   animation: pulsePlay 1s infinite ease-in-out;
 }
 
-/* -------- HEXÁGONOS DESKTOP -------- */
 .honeycomb-grid {
   display: flex;
   flex-wrap: wrap;
@@ -1002,6 +1001,51 @@ blockquote {
   }
 }
 
+@media (max-width: 768px) {
+
+  #recommendations {
+    padding: 40px 10px !important;
+  }
+
+  #recommendations blockquote {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+    padding: 0 5px;
+  }
+
+  #recommendations figure {
+    padding: 0 10px !important;
+  }
+
+  #recommendations img {
+    width: 55px !important;
+    height: 55px !important;
+    margin-bottom: 8px;
+  }
+
+  #recommendations .user-name {
+    font-size: 16px !important;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  #recommendations .user-role {
+    font-size: 13px !important;
+    opacity: 0.7;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: invert(1); 
+    width: 28px;
+    height: 28px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 15%;
+  }
+}
 
 </style>
 <body>
@@ -1597,7 +1641,7 @@ blockquote {
 
   <p class="programming-tag close">&lt;/Google UX Research &amp; Performance Tools&gt;</p>
 </div>
-
+</section>
 
 <div style="height:90px; background-color:#010810;" id="projectsB"></div>
 
