@@ -791,6 +791,44 @@ blockquote {
   animation: pulsePlay 1s infinite ease-in-out;
 }
 
+@media (max-width: 768px) {
+
+  .honeycomb-grid {
+    display: none !important;
+  }
+
+  .skills-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding: 15px 25px;
+  }
+
+  .skill-mobile-item {
+    background: rgba(138, 43, 226, 0.20);
+    border: 1px solid rgba(138, 43, 226, 0.4);
+    border-radius: 14px;
+    padding: 10px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill-mobile-item img {
+    width: 55px;
+    height: auto;
+    opacity: 0.95;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-mobile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
 </style>
 <body>
 
@@ -1400,6 +1438,33 @@ blockquote {
 <p class="programming-tag close">&lt;/Google UX Research &amp; Performance Tools&gt;</p>
 </div>
 </section>
+
+
+<!-- VERSION CEL-->
+ <div class="skills-mobile-grid">
+  <div class="skill-mobile-item"><img src="Habilidades/1.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/2.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/3.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/4.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/5.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/6.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/7.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/8.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/9.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/10.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/11.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/12.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/13.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/30.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/14.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/15.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/16.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/17.png" alt=""></div>
+  <div class="skill-mobile-item"><img src="Habilidades/18.png" alt=""></div>
+</div>
+
+
+
 
 
 <div style="height:90px; background-color:#010810;" id="projectsB"></div>
