@@ -791,10 +791,70 @@ blockquote {
   animation: pulsePlay 1s infinite ease-in-out;
 }
 
+/* -------- HEXÁGONOS DESKTOP -------- */
+.honeycomb-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.hexagon {
+  width: 160px;
+  height: 180px;
+  clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0% 50%);
+  background: radial-gradient(circle, #a855f7 0%, #7c3aed 50%, #4c1d95 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .35s ease-in-out;
+  transform: rotate(90deg);
+  box-shadow: 0 0 12px rgba(168, 85, 247, .6), 0 0 30px rgba(168, 85, 247, .6);
+}
+
+.hexagon img {
+  width: 90%;
+  height: auto;
+  opacity: .95;
+  filter: grayscale(10%);
+  transition: all .3s ease-in-out;
+  transform: rotate(-90deg);
+}
+
+.hexagon:hover {
+  transform: rotate(90deg) scale(1.15) translateY(-10px);
+  box-shadow: 0 0 18px #c084fc,0 0 36px rgba(192, 132, 252, .9);
+}
+
+.hexagon:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@media (max-width: 576px) {
+  .hexagon {
+    width: 120px;
+    height: 135px;
+  }
+}
+
+.programming-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.26rem;
+  font-weight: 500;
+  color: #8a2be2;
+  margin: 0.75rem 0;
+  text-shadow: 0 0 6px rgba(138, 43, 226, .55);
+}
+
+.section-block {
+  margin-top: 8rem;
+  margin-bottom: 7rem;
+}
+
 @media (max-width: 768px) {
 
   .honeycomb-grid {
-    display: none !important;
+    display: none;
   }
 
   .skills-mobile-grid {
@@ -819,37 +879,9 @@ blockquote {
   .skill-mobile-item img {
     width: 55px;
     height: auto;
-    opacity: 0.95;
   }
 }
 
-@media (max-width: 480px) {
-  .skills-mobile-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-}
-
-@media (max-width: 768px) {
-  .programming-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; 
-  }
-
-  .programming-tag {
-    text-align: center !important;
-    width: 100%;
-    display: block;
-    font-size: 1.3rem;
-    margin: 0;
-  }
-
-  .honeycomb-grid {
-    margin-top: 10px !important;
-  }
-}
 </style>
 <body>
 
@@ -1233,9 +1265,10 @@ blockquote {
 
   <h2 class="section-title">Technical Skills</h2>
   <p class="section-subtitle">Skills.</p>
-  <div class="section-block programming-section">
 
-    <p class="programming-tag open">&lt;Programming&gt;</p>
+    <div class="programming-wrapper">
+        <p class="programming-tag open">&lt;Programming&gt;</p>
+    </div>
 
     <div class="row justify-content-center honeycomb-grid mb-4">
     <div class="col-4 col-md-2 hexagon">
@@ -1462,90 +1495,89 @@ blockquote {
 
 
 <!-- VERSION CEL-->
-<div class="programming-wrapper">
+ <div class="programming-wrapper">
     <p class="programming-tag open">&lt;Programming&gt;</p>
 </div>
 
-<div class="row justify-content-center honeycomb-grid mb-4 programming-grid">
+<div class="skills-mobile-grid d-md-none">
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/1.png" alt="PHP" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/1.png" alt="PHP">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/2.png" alt="Python" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/2.png" alt="Python">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/3.png" alt="JavaScript" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/3.png" alt="JavaScript">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/4.png" alt="C++" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/4.png" alt="C++">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/5.png" alt="Java" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/5.png" alt="Java">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/6.png" alt="CodeIgniter MVC" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/6.png" alt="CodeIgniter MVC">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/7.png" alt="Flask" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/7.png" alt="Flask">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/8.png" alt="React" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/8.png" alt="React">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/9.png" alt="Next.js" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/9.png" alt="Next.js">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/10.png" alt="jQuery" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/10.png" alt="jQuery">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/11.png" alt="Bootstrap" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/11.png" alt="Bootstrap">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/12.png" alt="Tailwind CSS" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/12.png" alt="Tailwind CSS">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/13.png" alt="Animista on Demand" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/13.png" alt="Animista">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/30.png" alt="Google Fonts" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/30.png" alt="Google Fonts">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/14.png" alt="MySQL" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/14.png" alt="MySQL">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/15.png" alt="PostgreSQL" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/15.png" alt="PostgreSQL">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/16.png" alt="Git" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/16.png" alt="Git">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/17.png" alt="GitHub" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/17.png" alt="GitHub">
     </div>
 
-    <div class="col-4 col-md-2 hexagon">
-        <img src="Habilidades/18.png" alt="Git Desktop" class="img-fluid">
+    <div class="skill-mobile-item">
+        <img src="Habilidades/18.png" alt="Git Desktop">
     </div>
 
 </div>
-
 <div class="programming-wrapper">
     <p class="programming-tag close">&lt;/Programming&gt;</p>
 </div>
