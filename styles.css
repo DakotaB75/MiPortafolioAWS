@@ -345,6 +345,194 @@ body, html {
   box-shadow: 0 12px 26px rgba(0,0,0,0.55);
 }
 
+/* ================================
+   SPONSOR BUTTON
+================================ */
+.sponsor-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Text layers */
+.sponsor-btn .btn-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Default GitHub text */
+.sponsor-btn .default-text {
+  position: relative;
+}
+
+/* Sponsor text (hidden by default) */
+.sponsor-btn .sponsor-text {
+  position: absolute;
+  inset: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+
+  font-size: 0.85rem;
+  line-height: 1;
+
+  opacity: 0;
+  transform: translateY(6px);
+
+  color: #fff;
+}
+
+/* Hover state */
+.sponsor-btn:hover {
+  background: #212830;
+  box-shadow: 0 12px 28px rgba(210, 94, 157, 0.35);
+}
+
+.sponsor-btn:hover .default-text {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.sponsor-btn:hover .sponsor-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Active press */
+.sponsor-btn:active {
+  transform: scale(0.97);
+}
+
+/* ================================
+   HEART ICON
+================================ */
+.sponsor-heart {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  fill: #d25e9d;
+}
+
+
+/* =========================================
+   MOBILE: AUTO TOGGLE GITHUB / SPONSOR
+========================================= */
+@media (max-width: 768px) {
+
+  .sponsor-btn {
+    background: #111;
+    animation: sponsorSwap 4s infinite ease-in-out;
+  }
+
+  /* Default GitHub text */
+  .sponsor-btn .default-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Sponsor hidden initially */
+  .sponsor-btn .sponsor-text {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  /* Animation states */
+  @keyframes sponsorSwap {
+    0%, 45% {
+      background: #111;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    50%, 95% {
+      background: #212830;
+      box-shadow: 0 10px 26px rgba(210, 94, 157, 0.35);
+    }
+  }
+
+  /* Text swap timing */
+  .sponsor-btn {
+    animation-name: sponsorSwap;
+  }
+
+  .sponsor-btn .default-text {
+    animation: githubText 4s infinite ease-in-out;
+  }
+
+  .sponsor-btn .sponsor-text {
+    animation: sponsorText 4s infinite ease-in-out;
+  }
+
+  @keyframes githubText {
+    0%, 45% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    50%, 100% {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes sponsorText {
+    0%, 45% {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    50%, 95% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* Soft pulse heart */
+  .sponsor-heart {
+    animation: heartPulse 1.8s infinite ease-in-out;
+  }
+
+  @keyframes heartPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+    50% {
+      transform: scale(1.12);
+      opacity: 1;
+    }
+  }
+
+  /* Disable hover behavior on mobile */
+  .sponsor-btn:hover .default-text,
+  .sponsor-btn:hover .sponsor-text {
+    transform: none;
+  }
+}
+
+
+
+.btn-substack {
+  background: rgba(138, 43, 226, 0.28);
+  box-shadow: 0 6px 18px rgba(138, 43, 226, 0.35);
+  color: #fff;
+}
+
+.btn-substack:hover {
+  background: rgba(88, 24, 179, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(138, 43, 226, 0.45);
+}
+
+.btn-substack:active {
+  transform: translateY(0) scale(.97);
+}
+
 .intro-buttons .btn:active {
   transform: translateY(0);
   box-shadow: 0 3px 10px rgba(211, 24, 24, 0.2) inset;
@@ -645,5 +833,376 @@ ul li span:last-child {
   }
   .portfolio-video-title {
     font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+/* EXPERIENCE CARD – Base */
+.experience-card {
+  background: rgba(138, 43, 226, 0.20);
+  border: 1px solid rgba(138, 43, 226, 0.4);
+  border-radius: 14px;
+  padding: 1.6rem 1.8rem;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover glow */
+.experience-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(138, 43, 226, 0.6);
+  box-shadow:
+    0 10px 30px rgba(138, 43, 226, 0.25),
+    0 0 40px rgba(138, 43, 226, 0.15);
+}
+
+/* Header desktop */
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.experience-icon {
+  flex-shrink: 0;
+}
+
+.experience-icon img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  background: none;
+  padding: 0;
+
+  border: 1px solid rgba(138, 43, 226, 0.35);
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.35);
+}
+
+.experience-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Content text */
+.experience-content p {
+  font-family: 'Poiret One', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.experience-content .skill {
+  margin-top: 1.1rem;
+  font-size: 1.05rem;
+  color: rgba(199, 178, 255, 0.95);
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+  .experience-card {
+    padding: 2rem 1.6rem;
+    text-align: center;
+  }
+
+  /* 🔑 CLAVE: imagen arriba, título abajo */
+  .experience-header {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .experience-title {
+    font-size: 1.1rem;
+  }
+
+  .experience-content p {
+    line-height: 1.85;
+    margin-top: 1.2rem;
+  }
+
+  .experience-content .skill {
+    margin-top: 1.6rem;
+  }
+}
+
+
+
+
+
+
+
+
+/* MENTOR CARD – Base */
+.mentor-card {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(168, 85, 247, 0.35),
+      rgba(124, 58, 237, 0.22),
+      rgba(76, 29, 149, 0.18)
+    );
+
+  border: 1px solid rgba(138, 43, 226, 0.45);
+  border-radius: 16px;
+
+  padding: 2.1rem 2rem;
+  text-align: left;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Overlay estilo hexagon */
+.mentor-card-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(168, 85, 247, 0.55) 0%,
+      rgba(124, 58, 237, 0.35) 50%,
+      rgba(76, 29, 149, 0.25) 100%
+    );
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 0;
+}
+
+/* Hover */
+.mentor-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 12px 30px rgba(168, 85, 247, 0.35),
+    0 0 40px rgba(168, 85, 247, 0.25);
+}
+
+.mentor-card:hover .mentor-card-overlay {
+  opacity: 1;
+}
+
+/* Título principal */
+.mentor-card h3 {
+  position: relative;
+  z-index: 1;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600; /* negrita */
+  margin-bottom: 1.6rem;
+}
+
+/* Lista */
+.mentor-card ul {
+  position: relative;
+  z-index: 1;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mentor-card li {
+  margin-bottom: 1.3rem;
+}
+
+/* Títulos de ítems (Feedback / Bloqueos / Stack) */
+.mentor-card li strong {
+  display: block;
+
+  font-family: 'Poiret One', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.4px;
+}
+
+/* Textos descriptivos largos */
+.mentor-card li span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mentor-card {
+    padding: 2.3rem 1.8rem;
+    text-align: center;
+  }
+
+  .mentor-card h3 {
+    font-size: 1.45rem;
+  }
+
+  .mentor-card li {
+    margin-bottom: 1.6rem;
+  }
+
+  .mentor-card li span {
+    line-height: 1.85;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* CARD CONTENEDORA */
+.pedagogy-card {
+  position: relative;
+  overflow: hidden;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(124, 58, 237, 0.28),
+    rgba(76, 29, 149, 0.22),
+    rgba(30, 15, 70, 0.25)
+  );
+
+  border: 1px solid rgba(138, 43, 226, 0.35);
+  border-radius: 18px;
+
+  padding: 2.4rem 2.2rem;
+  margin-top: 2.5rem;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* HEXÁGONO DE FONDO – SOLO AL HOVER */
+.pedagogy-hex-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.7);
+
+  width: 300px;
+  height: 340px;
+
+  clip-path: polygon(
+    50% 0%,
+    93% 25%,
+    93% 75%,
+    50% 100%,
+    7% 75%,
+    7% 25%
+  );
+
+  background: rgba(124, 58, 237, 0.12);
+  border: 2px solid rgba(168, 85, 247, 0.55);
+
+  box-shadow:
+    0 0 22px rgba(168, 85, 247, 0.45),
+    0 0 55px rgba(124, 58, 237, 0.25);
+
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.45s ease;
+  z-index: 0; /* detrás del contenido */
+}
+
+.pedagogy-card:hover .pedagogy-hex-bg {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(0.85);
+}
+
+/* TÍTULO */
+.pedagogy-card .section-title {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+/* GRID */
+.pedagogy-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.6rem;
+}
+
+/* ITEMS */
+.pedagogy-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LEFT y RIGHT alignment */
+.left-item {
+  justify-self: start; /* izquierda total */
+  text-align: left;
+}
+
+.right-item {
+  justify-self: end; /* derecha total */
+  text-align: right;
+}
+
+/* TEXTO contenido */
+.pedagogy-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400; /* sin negrita */
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 0.45rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .pedagogy-grid {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .pedagogy-item {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .pedagogy-hex-bg {
+    width: 200px;
+    height: 230px;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+
+  .pedagogy-card:hover .pedagogy-hex-bg {
+    transform: translate(-50%, -50%) scale(0.8);
   }
 }
