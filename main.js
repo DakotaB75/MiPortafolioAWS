@@ -1,7 +1,8 @@
 const roles = [
-  "Frontend Software Engineer",
-  "UX Specialist",
-  "AWS Cloud Developer"
+  "Cloud-Native Solutions Architect",
+  "Platform Engineer",
+  "AWS Cloud Specialist",
+  "Open Source Contributor"
 ];
 
 const roleElement = document.getElementById("role");
