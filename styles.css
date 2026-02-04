@@ -538,6 +538,9 @@ body, html {
   box-shadow: 0 3px 10px rgba(211, 24, 24, 0.2) inset;
 }
 
+
+
+
 .intro-text {
   flex: 1;
   min-width: 300px;
@@ -1205,4 +1208,53 @@ ul li span:last-child {
   .pedagogy-card:hover .pedagogy-hex-bg {
     transform: translate(-50%, -50%) scale(0.8);
   }
+}
+
+.btn-cv {
+  background: #111;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  color: #fff;
+}
+
+.cv-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.5rem;
+  background: rgba(138, 43, 226, 0.25);
+  color: #c4b5fd;
+}
+
+.cv-tag-alt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.5rem;
+  background: rgba(196, 181, 253, 0.25);
+  color: #e9d5ff;
+}
+
+.btn-cv:hover {
+  background: #2a0a5e;
+  box-shadow: 0 12px 28px rgba(138, 43, 226, 0.45);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+
+  .btn-cv {
+    animation: cvSwap 4s infinite ease-in-out;
+  }
+
+  @keyframes cvSwap {
+    0%, 45% {
+      background: #111;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    }
+    50%, 95% {
+      background: #2a0a5e;
+      box-shadow: 0 10px 26px rgba(138, 43, 226, 0.45);
+    }
+  }
+
 }
